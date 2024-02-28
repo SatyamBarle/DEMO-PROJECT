@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blinking Effect</title>
+  <style>
+    #blinkingText {
+      font-size: 24px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Blinking Effect</h2>
+  <p id="blinkingText">This text will blink</p>
+
+  <script>
+    function blink() {
+      var blinkingText = document.getElementById("blinkingText");
+      setInterval(function() {
+        blinkingText.style.visibility = (blinkingText.style.visibility === 'hidden') ? 'visible' : 'hidden';
+      }, 500); // Toggle visibility every 500 milliseconds (half a second)
+    }
+    
+    // Start the blinking effect when the page loads
+    window.onload = blink;
+  </script>
+</body>
+</html>

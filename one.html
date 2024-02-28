@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Capitals</title>
+    <style>
+        /* Optional: Style the font and other properties of the select element */
+        select {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        /* Style the capital text */
+        #capital {
+            font-weight: bold;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <label for="countries">Choose a country:</label>
+    <select id="countries" name="countries" onchange="showCapital()">
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+        <option value="france">France</option>
+        <option value="germany">Germany</option>
+        <option value="japan">Japan</option>
+    </select>
+    
+    <p>Capital: <span id="capital"></span></p>
+
+    <script>
+        function showCapital() {
+            var selectBox = document.getElementById("countries");
+            var selectedCountry = selectBox.options[selectBox.selectedIndex].value;
+            var capitalSpan = document.getElementById("capital");
+            var capital = "";
+
+            switch (selectedCountry) {
+                case "usa":
+                    capital = "Washington D.C.";
+                    break;
+                case "uk":
+                    capital = "London";
+                    break;
+                case "france":
+                    capital = "Paris";
+                    break;
+                case "germany":
+                    capital = "Berlin";
+                    break;
+                case "japan":
+                    capital = "Tokyo";
+                    break;
+            }
+
+            capitalSpan.textContent = capital;
+        }
+    </script>
+</body>
+</html>

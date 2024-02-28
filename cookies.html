@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookies Demo</title>
+</head>
+<body>
+  <h2>Cookies Demo</h2>
+  <button onclick="createCookie()">Create Cookie</button>
+  <button onclick="readCookie()">Read Cookie</button>
+  <button onclick="deleteCookie()">Delete Cookie</button>
+
+  <script>
+    // Function to create a cookie
+    function createCookie() {
+      document.cookie = "username=John Doe; expires=Thu, 31 Dec 2024 23:59:59 UTC; path=/";
+      alert("Cookie created successfully!");
+    }
+
+    // Function to read a cookie
+    function readCookie() {
+      var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      if (cookieValue) {
+        alert("Cookie value: " + cookieValue);
+      } else {
+        alert("Cookie not found!");
+      }
+    }
+
+    // Function to delete a cookie
+    function deleteCookie() {
+      document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      alert("Cookie deleted successfully!");
+    }
+  </script>
+</body>
+</html>

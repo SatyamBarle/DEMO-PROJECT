@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Pop-up Boxes and Functions</title>
+  <script>
+    // Function to display the current date in the textbox
+    function displayDate() {
+      var currentDate = new Date();
+      document.getElementById("dateInput").value = currentDate.toDateString();
+    }
+
+    // Function to calculate factorial of a number
+    function calculateFactorial() {
+      var number = prompt("Enter a number:");
+      var factorial = 1;
+
+      // Calculate factorial
+      for (var i = 1; i <= number; i++) {
+        factorial *= i;
+      }
+
+      // Display result
+      alert("Factorial of " + number + " is: " + factorial);
+    }
+
+    // Function to display multiplication table
+    function displayMultiplicationTable() {
+      var number = prompt("Enter a number:");
+      var table = "";
+
+      // Generate multiplication table
+      for (var i = 1; i <= 10; i++) {
+        table += number + " x " + i + " = " + (number * i) + "\n";
+      }
+
+      // Display result
+      alert("Multiplication table of " + number + ":\n" + table);
+    }
+
+    // Function to calculate sum of numbers
+    function calculateSum() {
+      var n = parseInt(prompt("Enter a number:"));
+      var sum = 0;
+
+      // Add n numbers
+      for (var i = 1; i <= n; i++) {
+        sum += i;
+      }
+
+      // Display result
+      alert("Sum of numbers from 1 to " + n + " is: " + sum);
+    }
+  </script>
+</head>
+<body>
+  <h2>JavaScript Pop-up Boxes and Functions</h2>
+  <button onclick="displayDate()">Display Date</button>
+  <input type="text" id="dateInput" readonly>
+  <br>
+  <button onclick="calculateFactorial()">Calculate Factorial</button>
+  <button onclick="displayMultiplicationTable()">Display Multiplication Table</button>
+  <button onclick="calculateSum()">Calculate Sum</button>
+</body>
+</html>
